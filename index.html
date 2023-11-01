@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Link Checker</title>
+</head>
+<body>
+    <h1>Link Checker</h1>
+    <form method="POST" action="/">
+        <label for="link">Enter a URL:</label>
+        <input type="text" name="link" id="link" required>
+        <button type="submit">Check Link</button>
+    </form>
+    
+    {% if result %}
+    <p>Result: {{ result }}</p>
+    {% else %}
+    <p>No result available</p>
+    {% endif %}
+</body>
+</html>
