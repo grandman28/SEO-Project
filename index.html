@@ -2,6 +2,16 @@
 <html>
 <head>
     <title>Link Checker</title>
+    <style>
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .no-result {
+            color: #FF0000; /* Red color for better visibility */
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Link Checker</h1>
@@ -12,10 +22,15 @@
     </form>
     
     {% if result %}
-    <p>Result: {{ result }}</p>
+    <div class="result">
+        Result: {{ result }}
+    </div>
     {% else %}
-    <p>No result available</p>
+    <div class="no-result">
+        No result available
+    </div>
     {% endif %}
+
+    <p>{result | safe}</p>
 </body>
 </html>
-
