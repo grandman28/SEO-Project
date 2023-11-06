@@ -2,35 +2,19 @@
 <html>
 <head>
     <title>Link Checker</title>
-    <style>
-        .result {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .no-result {
-            color: #FF0000; /* Red color for better visibility */
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
-    <h1>Link Checker</h1>
-    <form method="POST" action="/">
-        <label for="link">Enter a URL:</label>
-        <input type="text" name="link" id="link" required>
-        <button type="submit">Check Link</button>
-    </form>
-    
-    {% if result %}
-    <div class="result">
-        Result: {{ result }}
-    </div>
-    {% else %}
-    <div class="no-result">
-        No result available
-    </div>
-    {% endif %}
+    <form class="grid" action="/result" method="POST">
+        <center>
+            {% if result %}
+                <h3 style="color: blue;">Link Check Result:</h3>
+                <p>{{ result }}</p>
+            {% endif %}
+        </center>
 
-    <p>{result | safe}</p>
+        <label for="link">Enter your link:</label>
+        <input type="text" name="link" id="link">
+        <center><input type="Submit" class="file_submit"></center>
+    </form>
 </body>
 </html>
