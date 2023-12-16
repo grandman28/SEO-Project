@@ -1,0 +1,237 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+* {
+    font-family: "Raleway";
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 4;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0;
+    font-size: 44px;
+}   
+
+h2 {
+    padding-top: 1em;
+    font-size: 34px;
+    line-height: 41px;
+    color: #000000;
+    text-align: center;
+}
+
+.container-header {
+    min-height: auto;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 70px;
+    flex: 0 0 auto;
+    background: url(pattern.png), #fd5324;
+    background: url(pattern.png), -webkit-linear-gradient(to left, #fd5324, #e6a346) !important;
+    background: url(pattern.png), linear-gradient(to left, #fd5324, #e6a346) !important;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px 23px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    width: 95px;
+    padding: 13px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+td.Good {
+    background-color: green;
+    color: white;
+}
+
+td.Bad {
+    background-color: red;
+    color: white;
+}
+
+td.Broken {
+    background-color: yellow;
+    color: white;
+}
+
+td.Good,
+td.Bad,
+td.Undefined {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* center the table on the page and set margin to 40px */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    margin: 40px;
+    flex: 1;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+
+td a {
+    display: block;
+    overflow-wrap: break-word;
+}
+thead{
+    border: 2px solid black
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    table-layout: fixed;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Increase the dimension of the second column */
+th:nth-child(2),
+td:nth-child(2) {
+    width: 12%;
+}
+
+/* Decrease the dimension of the first column */
+th:nth-child(1),
+td:nth-child(1) {
+    width: 70%;
+}
+
+th {
+    background-color: rgba(128, 128, 128, 0.548);
+    color: black;
+    text-align: center;
+    font-size: 26;
+}
+
+td:nth-child(2) {
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px; /* Adjust padding as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Make table dimensions relative to the page */
+@media (max-width: 768px) {
+    table,
+    th,
+    td {
+        width: 100%;
+    }
+}
+h3 {
+    font-size: 26px;
+    text-align: center;
+}
+h4 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0px;
+}
+
+h4.bad {
+    text-transform: uppercase;
+    color: red;
+}
+
+h4.good {
+    color: green;
+    text-transform: uppercase;
+}
+.footer {
+    background-color: #858383;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #3b3b3b;
+    margin-top: auto;
+}

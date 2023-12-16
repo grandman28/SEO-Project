@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"  href="static/style.css">
+    <title>URL Extractor</title>
+   
+
+</head>
+<body>
+    <header class="container-header">
+        <h1>URL Extractor</h1>
+        <form method="post" action="/result">
+            
+            <div class="input-container">
+                <input type="text" placeholder="Enter link here" name="link" id="link" required>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </header>
+    {% if result %}
+    <h3>Checked website: {{ result['link_result'][0] }}<br></h3>
+    <h4 class="{{ 'good' if result['link_result'][1] == 'Good' else 'bad' }}">
+        
+        {{ result['link_result'][1] }}
+    </h4>
+        {% if result['urls'] %}
+            <h2>URLs on the webpage:</h2>
+            <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for url, status in result['urls'] %}
+                        <tr>
+                            <td>{{ url }}</td>
+                            <td class="{{ ' '.join(status.split()) }}">{{ status }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <h2>No URLs found on the webpage.</h2>
+        {% endif %}
+    {% endif %}
+    <div class="footer">
+        <p>&copy; 2023 Copyright SEO Team</p>
+    </div>
+</body>
+
+</html>
