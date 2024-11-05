@@ -5,8 +5,37 @@
     box-sizing: border-box;
 }
 
-
-
+a {
+    text-decoration: none;
+  }
+  a:link {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #666;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: #999;
+    text-decoration: none;
+  }
+  #loading-gif {
+    position: absolute;
+    top: calc(50vh + (100vh - (100vh - 70px) - 40px) / 2);
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 250px;
+    margin: 0 auto;
+    z-index: 1;
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 4;
