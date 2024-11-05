@@ -13,14 +13,15 @@ def link_checker(link):
         if link != None:
             if link[:8] != 'https://':
                 if link[:7] != 'http://':
-                    s = 'https://'
+                    s = 'http://'
                     link = s + link
                     print(link)
- 
-            req = requests.get(link)
- 
-            status = f"Broken status-code: {req.status_code}" if req.status_code in [400, 404, 403, 408, 409, 501, 502, 503] else "Good"
+                    head_response = requests.head(link, allow_redirects=True)
+                    if head_response.url.startswith('https://'):
+                        link = head_response.url
 
+            req = requests.get(link)
+            status = f"Broken status-code: {req.status_code}" if req.status_code in [400, 404, 403, 408, 409, 501, 502, 503] else "Good"
             return link, status
  
     except requests.exceptions.RequestException as e:
