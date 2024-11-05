@@ -13,15 +13,18 @@
 </head>
 <body>
     <header class="container-header">
-        <h1>URL Extractor</h1>
-        <form method="post" action="/result">
-            
+        <h1><a href="/">URL Extractor</a></h1>
+
+        <form method="post" action="/result" id="myForm">
             <div class="input-container">
                 <input type="text" placeholder="Enter link here" name="link" id="link" required>
                 <button type="submit">Submit</button>
             </div>
         </form>
     </header>
+    <img id="loading-gif" src="static/loading.gif" style="display: none;">
+
+    <div id="result-container">
     {% if result %}
     <h3>Checked website: {{ result['link_result'][0] }}<br></h3>
     <h4 class="{{ 'good' if result['link_result'][1] == 'Good' else 'bad' }}">
@@ -29,7 +32,7 @@
         {{ result['link_result'][1] }}
     </h4>
         {% if result['urls'] %}
-            <h2>URLs on the webpage:</h2>
+            <h2>URLs on the webpage: {{ result['urls'] | length }}</h2>
             <div class="container">
             <table>
                 <thead>
@@ -52,9 +55,22 @@
             <h2>No URLs found on the webpage.</h2>
         {% endif %}
     {% endif %}
+    </div>
+
     <div class="footer">
                <p>&copy; 2023 Copyright SEO Team <br>Gandraman Iulian, Despoiu Sabina, Ghirda-Ratoi Melania</p>
     </div>
-</body>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const loadingGif = document.getElementById('loading-gif');
+        const resultContainer = document.getElementById('result-container');
+    
+        form.addEventListener('submit', (e) => {
+            loadingGif.style.display = 'block'; // Show the loading GIF
+            resultContainer.innerHTML = ''; // Clear the result container
+
+        });
+    </script>
 
 </html>
